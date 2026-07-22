@@ -1,0 +1,10 @@
+{
+  "aeroweights.tooltip.mass.normal": "Normal",
+  "aeroweights.tooltip.mass.none": "Weightless",
+  "aeroweights.tooltip.mass.super_light": "Super Light",
+  "aeroweights.tooltip.mass.light": "Light",
+  "aeroweights.tooltip.mass.heavy": "Heavy",
+  "aeroweights.tooltip.mass.super_heavy": "Super Heavy",
+  "aeroweights.tooltip.mass.absurdly_heavy": "Absurdly Heavy",
+  "aeroweights.unit.mass": "%s kpg"
+}

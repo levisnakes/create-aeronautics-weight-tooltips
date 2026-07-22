@@ -1,0 +1,49 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+logoFile="icon.png"
+authors="levisnakes"
+credits="Weights, wording and colours come from Create: Aeronautics and its Sable physics engine."
+displayURL="https://modrinth.com/mod/create-aeronautics-weight-tooltips"
+description='''
+Shows the block weight on every item tooltip, including the ones Create: Aeronautics leaves blank.
+
+Aeronautics only prints a weight when a block is unusual - lighter or heavier than the 1 kpg default - and only while you are wearing Engineer's Goggles. Every ordinary block shows nothing at all, so there is no way to tell "this weighs the normal amount" apart from "this has no weight data", and no way to price out a build without goggles in hand.
+
+This fills the gap in. Hover any block and you get its weight, using the exact same tier names, colours and numbers Aeronautics uses, with a new "Normal" tier for the 1 kpg default. Lines Aeronautics already writes are never duplicated.
+
+Client-side only, works on any server. Configurable: always / only while holding shift / off, with or without the exact number.
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.0,)"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="sable"
+    type="required"
+    versionRange="[1.0,)"
+    ordering="AFTER"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="simulated"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="CLIENT"
