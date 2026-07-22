@@ -90,7 +90,8 @@ final class WeightTooltip {
             return;
         }
 
-        lines.add(Component.literal("").append(buildLine(mass)));
+        // Aeronautics indents its property lines by a single space; match it.
+        lines.add(Component.literal(" ").append(buildLine(mass)));
     }
 
     private static MutableComponent buildLine(double mass) {
@@ -149,13 +150,14 @@ final class WeightTooltip {
 
     /**
      * True when Create: Aeronautics already wrote a mass line for this item, which it does as
-     * "&lt;tier&gt; (&lt;n&gt; kpg)". Matching on the translated tier names rather than the unit keeps
+     * " &lt;tier&gt; (&lt;n&gt; kpg)". Matching on the translated tier names rather than the unit keeps
      * the "Floating (n kpg)" line - which shares the unit - from being mistaken for one.
      */
     private static boolean alreadyShowsWeight(List<Component> lines) {
         String[] labels = labels();
         for (Component line : lines) {
-            String text = line.getString();
+            // Aeronautics indents its lines, so compare against the trimmed text.
+            String text = line.getString().trim();
             if (text.isEmpty()) {
                 continue;
             }
